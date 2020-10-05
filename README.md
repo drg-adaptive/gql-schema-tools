@@ -30,29 +30,8 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`gql hello [FILE]`](#gql-hello-file)
 * [`gql help [COMMAND]`](#gql-help-command)
-* [`gql merge [FILE]`](#gql-merge-file)
-
-## `gql hello [FILE]`
-
-describe the command here
-
-```
-USAGE
-  $ gql hello [FILE]
-
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
-
-EXAMPLE
-  $ gql hello
-  hello world from ./src/hello.ts!
-```
-
-_See code: [src/commands/hello.ts](https://github.com/drg-adaptive/gql-schema-tools/blob/v0.0.0/src/commands/hello.ts)_
+* [`gql merge FILE`](#gql-merge-file)
 
 ## `gql help [COMMAND]`
 
@@ -71,18 +50,21 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.0/src/commands/help.ts)_
 
-## `gql merge [FILE]`
+## `gql merge FILE`
 
-describe the command here
+Merge multiple graphql schema files into a single output
 
 ```
 USAGE
-  $ gql merge [FILE]
+  $ gql merge FILE
+
+ARGUMENTS
+  FILE  Filename to save result
 
 OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  -h, --help         show CLI help
+  -i, --input=input  [default: **/*.graphql] glob pattern of schema files
+  --sort
 ```
 
 _See code: [src/commands/merge.ts](https://github.com/drg-adaptive/gql-schema-tools/blob/v0.0.0/src/commands/merge.ts)_
