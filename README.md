@@ -3,10 +3,12 @@ gql-schema-tools
 
 Tools to work with graphql schemas
 
-[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
+![Release](https://github.com/drg-adaptive/gql-schema-tools/workflows/Release/badge.svg?branch=main)
+[![Maintainability](https://api.codeclimate.com/v1/badges/ce9273e84d42cd99ae08/maintainability)](https://codeclimate.com/github/drg-adaptive/gql-schema-tools/maintainability)
 [![Version](https://img.shields.io/npm/v/gql-schema-tools.svg)](https://npmjs.org/package/gql-schema-tools)
 [![Downloads/week](https://img.shields.io/npm/dw/gql-schema-tools.svg)](https://npmjs.org/package/gql-schema-tools)
 [![License](https://img.shields.io/npm/l/gql-schema-tools.svg)](https://github.com/drg-adaptive/gql-schema-tools/blob/master/package.json)
+[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 
 <!-- toc -->
 * [Usage](#usage)
