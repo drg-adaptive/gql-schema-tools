@@ -5,7 +5,7 @@ import * as path from "path";
 import * as fs from "fs";
 
 export default class Merge extends Command {
-  static description = `describe the command here`;
+  static description = `Merge multiple graphql schema files into a single output`;
 
   static flags = {
     help: flags.help({ char: `h` }),
