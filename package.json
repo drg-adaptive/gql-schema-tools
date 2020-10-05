@@ -18,12 +18,20 @@
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/github": "^7.1.1",
+    "@semantic-release/npm": "^7.0.6",
+    "@semantic-release/release-notes-generator": "^9.0.1",
     "@tsconfig/node12": "^1.0.7",
     "@types/node": "^10",
+    "commitizen": "^4.2.1",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^5.13",
     "eslint-config-oclif": "^3.1",
     "eslint-config-oclif-typescript": "^0.1",
     "globby": "^10",
+    "semantic-release": "^17.1.2",
     "ts-node": "^8",
     "typescript": "^3.3"
   },
@@ -57,5 +65,43 @@
     "test": "echo NO TESTS",
     "version": "oclif-dev readme && git add README.md"
   },
-  "types": "lib/index.d.ts"
+  "types": "lib/index.d.ts",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "release": {
+    "branches": [
+      "master"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogTitle": "# gql-schema-tools Change Log",
+          "changelogFile": "CHANGELOG.md"
+        }
+      ],
+      "@semantic-release/github",
+      "@semantic-release/npm"
+    ],
+    "verifyConditions": [
+      "@semantic-release/github",
+      "@semantic-release/npm"
+    ],
+    "prepare": [
+      "@semantic-release/npm",
+      "@semantic-release/changelog"
+    ],
+    "publish": [
+      "@semantic-release/npm",
+      {
+        "path": "@semantic-release/github",
+        "assets": "CHANGELOG.md"
+      }
+    ]
+  }
 }
