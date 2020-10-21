@@ -31,7 +31,7 @@ export default class Merge extends Command {
 
       this.log(`Loaded ${schemaFiles.length} types`);
       
-      const result = mergeTypeDefs(schemaFiles, { all: true }, "utf-8")
+      const result = mergeTypeDefs(schemaFiles, { all: true, sort: flags.sort }, "utf-8")
 
       const outputFilename = path.resolve(process.cwd(), args.file);
       this.log(`Writing to ${outputFilename}`);
