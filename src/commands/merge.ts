@@ -1,6 +1,8 @@
 import { Command, flags } from "@oclif/command";
-import { mergeTypeDefs } from "@graphql-tools/merge";
+import { mergeGraphQLTypes, mergeTypeDefs } from "@graphql-tools/merge";
+import { makeExecutableSchema } from '@graphql-tools/schema';
 import { loadFilesSync } from "@graphql-tools/load-files";
+import { print } from "graphql"
 import * as path from "path";
 import * as fs from "fs";
 
@@ -31,12 +33,12 @@ export default class Merge extends Command {
 
       this.log(`Loaded ${schemaFiles.length} types`);
       
-      const result = mergeTypeDefs(schemaFiles, { all: true, sort: flags.sort }, "utf-8")
+      const result = mergeTypeDefs(schemaFiles, { sort: flags.sort })
 
       const outputFilename = path.resolve(process.cwd(), args.file);
       this.log(`Writing to ${outputFilename}`);
 
-      await fs.promises.writeFile(outputFilename, result, `utf-8`);
+      await fs.promises.writeFile(outputFilename, print(result), `utf-8`);
     } catch (error) {
       this.error(error);
     }

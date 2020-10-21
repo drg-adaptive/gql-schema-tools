@@ -21,7 +21,7 @@ $ npm install -g gql-schema-tools
 $ gql COMMAND
 running command...
 $ gql (-v|--version|version)
-gql-schema-tools/0.0.0 darwin-x64 node-v12.13.1
+gql-schema-tools/0.0.0 darwin-x64 node-v13.13.0
 $ gql --help [COMMAND]
 USAGE
   $ gql COMMAND
